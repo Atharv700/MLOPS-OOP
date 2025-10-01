@@ -14,14 +14,37 @@ class talky:
                          5. Enter any other key to exit""")
         
         if user_input=="1":
-            pass
+            self.signup()
         elif user_input=="2":
-            pass
+            self.signin()
         elif user_input=="3":
             pass
         elif user_input=="4":
             pass
         else:
             exit()
+    
+    def signup(self):
+        user=input("Enter your email as username")
+        pws=input("Enter you password")
+        self.username=user
+        self.password=pws
+        print("You are signup successfully here ")
+        self.menu()
+
+    def signin(self):
+        if self.username=="" or self.password=="":
+            print("You havent signup yet , please signup first and then proceed")
+            self.menu()
+        else :
+            us=input("Please enter your username")
+            ps=input("Please enter your password")
+            if(us==self.username and ps==self.password):
+                print("You have signin successfully , you can now post and message")
+                self.login=True
+                self.menu()
+            else:
+                print("Please enter the Right credentials")
+
 
 obj=talky()
