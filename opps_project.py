@@ -18,9 +18,9 @@ class talky:
         elif user_input=="2":
             self.signin()
         elif user_input=="3":
-            pass
+            self.post()
         elif user_input=="4":
-            pass
+            self.message()
         else:
             exit()
     
@@ -45,6 +45,26 @@ class talky:
                 self.menu()
             else:
                 print("Please enter the Right credentials")
+
+    def post(self):
+        if self.login==True:
+            txt=input("Write the message you want to post")
+            print(f"The following message is posted successfully{txt}")
+        else :
+            print("Please fiest signin first to post the message \n")
+        self.menu()
+
+    def message(self):
+        if self.login==True:
+            txt=input("Enter the message you want to send")
+            friend=input("Enter the name of the friend")
+
+            print(f"the message is successfully send to the {friend}")
+
+        else:
+            print("To send the Message you have to signin first")
+
+        self.menu()
 
 
 obj=talky()
