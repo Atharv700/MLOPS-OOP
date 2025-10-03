@@ -7,5 +7,7 @@
 # print(type(my_int))
 
 from opps_project import talky
+# from file import class
 
 obj2=talky()
+

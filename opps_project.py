@@ -1,9 +1,21 @@
 class talky:
+
+    __user_id=1
+
     def __init__(self):
         self.username=""
+        self.id=talky.__user_id
+        talky.__user_id +=1
+        self.__name="Default user" #hidden attribute
         self.password=""
         self.login=False
-        self.menu()
+        #self.menu()
+
+    def getter(self):
+        return self.__name
+    
+    def setter(self,value):
+        self.__name=value
 
     def menu(self):
         user_input=input("""Welocome to talky || how would you like to proceed?
@@ -67,4 +79,18 @@ class talky:
         self.menu()
 
 
-obj=talky()
+user1=talky()
+user2=talky()
+user3=talky()
+
+print(user1.id)
+print(user2.id)
+print(user3.id)
+
+# function vs message (in function we give the obj as the argument)
+# magic method -
+# self -> use to pass the object itself 
+# can create attribute and function outside the class 
+# encapsulation : self.__attribute while accessing obj._classname__attribute and inside class can be access like self.__attribute
+
+# static attribute : commom to all objects define outside the __init__() method  
